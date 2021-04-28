@@ -31,6 +31,7 @@ function http_get(ip, port, url, params, callback) {
     //把请求发送出去
     req.end();
 }
+
 function http_post(ip, port, url, params, body, callback) {
     var options = {
         host: ip,
@@ -52,8 +53,8 @@ function http_post(ip, port, url, params, body, callback) {
     req.write(body);
     req.end();
 }
-http_post('127.0.0.1',6080,'/upload','filename=my_file.txt','THIS IS UPLOAD!!!',(is_ok,data)=>{
-    if(is_ok){
+http_post('127.0.0.1', 6080, '/upload', 'filename=my_file.txt', 'THIS IS UPLOAD!!!', (is_ok, data) => {
+    if (is_ok) {
         console.log("UPLOAD RESPONSE" + data.toString());
     }
 });
